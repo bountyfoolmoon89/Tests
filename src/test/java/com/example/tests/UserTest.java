@@ -30,8 +30,8 @@ public class UserTest {
 
         User user = new User();
 
-        Assertions.assertNotEquals(invalidEmail, user.getEmail());
-        Assertions.assertEquals(validEmail, user.getEmail());
+        Assertions.assertTrue(user.setEmail(validEmail));
+        Assertions.assertFalse(user.setEmail(invalidEmail));
     }
 
     @Test
